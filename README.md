@@ -10,10 +10,9 @@ A minimal, python based
 
 neerwef dasdas:
 
-	mkdir anymal_director_ws/src
+	mkdir -p anymal_director_ws/src
 	cd anymal_director_ws
 	catkin init
 	catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release
-	cd src
 	git clone git@github.com:ori-drs/director_anymal_b_simple.git
-	source director_anymal_b_simple/clone_deps.sh
+	source director_anymal_b_simple/scripts/clone_deps.sh
