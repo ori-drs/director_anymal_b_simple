@@ -1,0 +1,51 @@
+<launch>
+
+    <arg name="anymal_folder" default="anymal_sim" />    
+
+    <arg name="realsense_front_image" default="/realsense_d435_front/color/image_raw" />
+    <arg name="realsense_front_image_transport" default="compressed" />
+    <arg name="realsense_front_image_info" default="/realsense_d435_front/color/camera_info" />
+
+    <arg name="realsense_front_depth" default="/realsense_d435_front/aligned_depth_to_color/image_raw" />
+    <arg name="realsense_front_depth_transport" default="compressedDepth" />
+    <arg name="realsense_front_depth_info" default="/realsense_d435_front/aligned_depth_to_color/camera_info" />
+
+
+    <arg name="realsense_front_forward_image" default="/realsense_d435_front_forward/color/image_raw" />
+    <arg name="realsense_front_forward_image_transport" default="compressed" />
+    <arg name="realsense_front_forward_image_info" default="/realsense_d435_front_forward/color/camera_info" />
+
+    <arg name="realsense_front_forward_depth" default="/realsense_d435_front_forward/aligned_depth_to_color/image_raw" />
+    <arg name="realsense_front_forward_depth_transport" default="compressedDepth" />
+    <arg name="realsense_front_forward_depth_info" default="/realsense_d435_front_forward/aligned_depth_to_color/camera_info" />
+
+    <arg name="velodyne_point_cloud" default="/point_cloud_filter/velodyne/point_cloud_filtered" />
+
+    <arg name="elevation_map" default="/elevation_mapping/elevation_map" />
+    <arg name="elevation_map_lidar" default="/elevation_mapping_lidar/elevation_map" />
+
+    <node pkg="director" type="director" name="director" output="screen" 
+    args="--startup $(find director_anymal_b_simple)/src/director_anymal_b_simple/runstartup.py -c $(find director_anymal_b_simple)/config/$(arg anymal_folder)/robot.cfg --director-config $(find director_anymal_b_simple)/config/$(arg anymal_folder)/director_config.json" >
+        <param name="realsense_front_image" value="$(arg realsense_front_image)" type="string"/>
+        <param name="realsense_front_image_transport" value="$(arg realsense_front_image_transport)" type="string"/>
+        <param name="realsense_front_image_info" value="$(arg realsense_front_image_info)" type="string"/>
+
+        <param name="realsense_front_depth" value="$(arg realsense_front_depth)" type="string"/>
+        <param name="realsense_front_depth_transport" value="$(arg realsense_front_depth_transport)" type="string"/>
+        <param name="realsense_front_depth_info" value="$(arg realsense_front_depth_info)" type="string"/>
+
+        <param name="realsense_front_forward_image" value="$(arg realsense_front_forward_image)" type="string"/>
+        <param name="realsense_front_forward_image_transport" value="$(arg realsense_front_forward_image_transport)" type="string"/>
+        <param name="realsense_front_forward_image_info" value="$(arg realsense_front_forward_image_info)" type="string"/>
+
+        <param name="realsense_front_forward_depth" value="$(arg realsense_front_forward_depth)" type="string"/>
+        <param name="realsense_front_forward_depth_transport" value="$(arg realsense_front_forward_depth_transport)" type="string"/>
+        <param name="realsense_front_forward_depth_info" value="$(arg realsense_front_forward_depth_info)" type="string"/>
+
+        <param name="velodyne_point_cloud" value="$(arg velodyne_point_cloud)" type="string"/>
+
+        <param name="elevation_map" value="$(arg elevation_map)" type="string"/>
+        <param name="elevation_map_lidar" value="$(arg elevation_map_lidar)" type="string"/>
+    </node>
+
+</launch>

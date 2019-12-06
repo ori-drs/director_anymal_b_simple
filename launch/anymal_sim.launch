@@ -1,0 +1,23 @@
+<launch>
+
+    <include file="$(find director_anymal_b_simple)/launch/anymal_core.launch">
+    <arg name="anymal_folder"                              value="anymal_sim"/>
+    <arg name="realsense_front_image"                      value="/realsense_d435_front/rgb/image_raw" />
+    <arg name="realsense_front_image_transport"            value="raw" />
+    <arg name="realsense_front_image_info"                 value="/realsense_d435_front/rgb/camera_info" />
+
+    <arg name="realsense_front_depth"                      value="/realsense_d435_front/depth/image_raw" />
+    <arg name="realsense_front_depth_transport"            value="raw" />
+    <arg name="realsense_front_depth_info"                 value="/realsense_d435_front/depth/camera_info" />
+
+
+    <arg name="realsense_front_forward_image"              value="/realsense_d435_front_forward/rgb/image_raw" />
+    <arg name="realsense_front_forward_image_transport"    value="raw" />
+    <arg name="realsense_front_forward_image_info"         value="/realsense_d435_front_forward/rgb/camera_info" />
+
+    <arg name="realsense_front_forward_depth"              value="/realsense_d435_front_forward/depth/image_raw" />
+    <arg name="realsense_front_forward_depth_transport"    value="raw" />
+    <arg name="realsense_front_forward_depth_info"         value="/realsense_d435_front_forward/depth/camera_info" />
+    </include>
+
+</launch>

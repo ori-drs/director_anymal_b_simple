@@ -1,0 +1,339 @@
+group "0.core" {
+    cmd "core" {
+        exec = "roscore";
+        host = "localhost";
+    }
+}
+
+group "1.simulator" {
+    cmd "sim_sensors_batcave" {
+        exec = "roslaunch anymal_sim_drs sim_batcave.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_ori" {
+        exec = "roslaunch anymal_sim_drs sim_ori.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_ori_no_sensors" {
+        exec = "roslaunch anymal_sim_drs sim_ori_no_sensors.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_new_lab" {
+        exec = "roslaunch anymal_sim_drs sim_new_lab.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_kick_ball" {
+        exec = "roslaunch anymal_sim_drs sim_kick_ball.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_object_scan" {
+        exec = "roslaunch anymal_sim_drs sim_object_scan.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_cdt_challenge" {
+        exec = "roslaunch anymal_sim_drs sim_cdt_challenge.launch";
+        host = "localhost";
+    }    
+    cmd "sim_sensors_oil_rig" {
+        exec = "roslaunch anymal_sim_drs sim_oil_rig.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_mapping_challenge" {
+        exec = "roslaunch anymal_sim_drs sim_ori_mapping_challenge.launch";
+        host = "localhost";
+    }    
+    cmd "sim_no_sensors" {
+        exec = "roslaunch anymal_sim_drs sim_no_sensors.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_fire_college" {
+        exec = "roslaunch anymal_sim_drs sim_fire_college.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_april_box" {
+        exec = "roslaunch anymal_sim_drs sim_april_box.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_obstacle_course" {
+        exec = "roslaunch anymal_sim_drs sim_obstacle_course.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_niosh_mine" {
+        exec = "roslaunch anymal_sim_drs sim_niosh_mine.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_helicopter" {
+        exec = "roslaunch anymal_sim_drs sim_fsc_helicopter_simple.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_flat_pallet" {
+        exec = "roslaunch anymal_sim_drs sim_flat_pallet_drs.launch";
+        host = "localhost";
+    }
+    cmd "sim_sensors_gtc_facade" {
+        exec = "roslaunch anymal_sim_drs sim_gtc_facade_simple.launch";
+        host = "localhost";
+    }
+}
+
+group "2.vis" {
+    cmd "director" {
+        exec = "roslaunch director_drs anymal_sim.launch";
+        host = "localhost";
+    }
+}
+
+group "3.navigation" {
+    cmd "position-controller" {
+        exec = "roslaunch  position_controller position_controller.launch";
+        host = "localhost";
+    }
+}
+
+group "3.autonomy" {
+    cmd "multi-gait-scheduler" {
+        exec = "roslaunch multi_gait_scheduler multi_gait_scheduler_sim.launch";
+        host = "localhost";
+    }
+    cmd "multi-gait-execute" {
+        exec = "rosrun multi_gait_executor multi_gait_executor.py";
+        host = "localhost";
+    }
+}
+
+group "4.obstacle-mapping" {
+    cmd "lidar-exploration" {
+        exec = "roslaunch lidar_exploration bezier_exploration.launch";
+        host = "localhost";
+    }
+    cmd "lidar-elevation-map" {
+        exec = "roslaunch anymal_elevation_mapping_drs elevation_mapping_velodyne_realsense.launch";
+        host = "localhost";
+    }
+}
+
+group "5.april_tags" {
+    cmd "person_follower" {
+        exec = "roslaunch position_controller apriltag_follower_anymal_sim.launch";
+        host = "localhost";
+    }
+}
+
+group "7.dub4-mono-orilogs" {
+    cmd "MOOSDB" {
+        exec = "MOOSDB";
+        host = "localhost";
+    }
+    cmd "localise-mono" {
+        exec = "localise --logtostderr -map_dir $HOME/logs-moos/dub4-data/ -config $HOME/code/dub4/build/bin/dub4.xml -cam1_monolithic_path $HOME/logs-moos/monos/2/BB3-11151176/2014-06-26-09-25-24/BUMBLEBEE3_IMAGES.monolithic -lut_dir $HOME/logs-moos/sensor-models -platform_config $HOME/code/corelibs/src/platform-configurations/robotcar/2014-11-18-13-21-05/platform.xml --logging_dir $HOME/logs-moos/dub4-output";
+        host = "localhost";
+    }
+    cmd "dub_viewer" {
+        exec = "dub_viewer --viewer_single_app -mini";
+        host = "localhost";
+    }
+    cmd "dub4_ros_translator" {
+        exec = "dub4_ros_translator --viewer_single_app";
+        host = "localhost";
+    }
+}
+
+group "8.object-scan" {
+    cmd "object-scan" {
+        exec = "roslaunch object_scan object_scan.launch";
+        host = "localhost";
+    }
+}
+
+cmd "pcd_to_rviz" {
+    exec = "rosrun  cloud_accumulate pcd_to_rviz  $HOME/drs_testing_data/leica/ori-building-maps/map_filter_cutaway_for_autonomy_5cm.pcd  ori_map";
+    host = "localhost";
+}
+
+group "x.misc" {
+    cmd "tf_minimal" {
+        exec = "roslaunch quadruped_tf_publisher quadruped_tf_publisher_minimal.launch";
+        host = "localhost";
+    }
+    cmd "se2director" {
+        exec = "rosrun  lcm_translators state-estimator-to-director.py";
+        host = "localhost";
+    }
+    cmd "husky-lidar-passthrough" {
+        exec = "husky-lidar-passthrough";
+        host = "localhost";
+    }
+    cmd "maps" {
+        exec = "rosrun maps_server maps-server -l MULTISENSE_SCAN";
+        host = "localhost";
+    }
+    cmd "bot_spy" {
+        exec = "rosrun bot_lcm_utils bot_spy";
+        host = "localhost";
+    }
+    cmd "image_view_ground_sim" {
+        exec = "rosrun image_view image_view image:=/realsense_d435/rgb/image_raw";
+        host = "localhost";
+    }
+}
+
+
+script "start_sim_batcave" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_batcave";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_ori" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_ori";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_new_lab" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_new_lab";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_kick_ball" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_kick_ball";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_object_scan" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_object_scan";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_cdt_challenge" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_cdt_challenge";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_mapping_challenge" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_mapping_challenge";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_fire_college" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_fire_college";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_april_box" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_april_box";
+    start group "2.vis";
+    start group "5.april_tags";
+}
+
+script "start_sim_oil_rig" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_oil_rig";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_no_sensors" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_no_sensors";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_obstacle_course" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_obstacle_course";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_niosh_mine" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_niosh_mine";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_helicopter" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_helicopter";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_gtc_facade" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_gtc_facade";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+    
+script "start_sim_flat_pallet" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_flat_pallet";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_no_simulator" {
+    start group "0.core";
+    wait ms 1000;
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
+
+script "start_sim_ori_no_sensors" {
+    start group "0.core";
+    wait ms 1000;
+    start cmd "sim_sensors_ori_no_sensors";
+    start group "2.vis";
+    start group "3.navigation";
+    start group "3.autonomy";
+}
