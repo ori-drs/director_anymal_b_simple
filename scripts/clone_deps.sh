@@ -1,6 +1,5 @@
 #!/bin/bash
-# already cloned:
-#git clone git@github.com:ori-drs/anymal_b_simple_description.git
+git clone git@github.com:ori-drs/anymal_b_simple_description.git
 
 # director dependencies (not managed by us)
 git clone git@github.com:ori-drs/QtPropertyBrowser.git qt_property_browser
@@ -11,7 +10,8 @@ git clone git@github.com:ori-drs/PointCloudLibraryPlugin.git pcl_plugin
 # director and related
 git clone git@github.com:ori-drs/vtk_ros.git
 git clone git@github.com:ori-drs/director.git
-git clone git@github.com:ori-drs/director_anymal_b_simple.git
+# already cloned:
+#git clone git@github.com:ori-drs/director_anymal_b_simple.git
 
 
 # Module within repo needed from these:
