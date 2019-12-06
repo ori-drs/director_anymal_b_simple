@@ -32,7 +32,7 @@ Then build the software:
 
 It should take about 90 seconds.
 
-# 
+# Running UI with ANYmal simulator
 
 Launch a simulator and the Director:
 
