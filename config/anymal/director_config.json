@@ -1,0 +1,132 @@
+{
+  "modelName" : "anymal",  
+  "urdfConfig": {
+    "default": "./../anymal/model.urdf",
+    "robotState": "./../anymal/model.urdf",
+    "ik":         "./../anymal/model.urdf",
+    "chull":      "./../anymal/model.urdf",
+    "playback":   "./../anymal/model.urdf",
+    "teleop":     "./../anymal/model.urdf"
+  },
+  "colorMode": "Textures",
+
+
+  "teleopJointGroups" : [
+      { "name" : "Base",
+        "joints" : [
+          "base_x",
+          "base_y",
+          "base_z",
+          "base_roll",
+          "base_pitch",
+          "base_yaw"
+          ],
+        "labels" : ["x", "y", "z", "roll", "pitch", "yaw"]
+      },
+
+      { "name" : "Left Arm",
+        "joints" : [
+          "LF_HAA",
+          "LF_HFE",
+          "LF_KFE"
+          ],
+        "labels" : ["LF_HAA", "LF_HFE", "LF_KFE"]
+      },
+
+      { "name" : "Right Arm",
+        "joints" : [
+          "RF_HAA",
+          "RF_HFE",
+          "RF_KFE"
+          ],
+        "labels" : ["RF_HAA", "RF_HFE", "RF_KFE"]
+      },
+
+      { "name" : "Left Hind",
+        "joints" : [
+          "LH_HAA",
+          "LH_HFE",
+          "LH_KFE"
+          ],
+        "labels" : ["LH_HAA", "LH_HFE", "LH_KFE"]
+      },
+
+      { "name" : "Right Hind",
+        "joints" : [
+          "RH_HAA",
+          "RH_HFE",
+          "RH_KFE"
+          ],
+        "labels" : ["RH_HAA", "RH_HFE", "RH_KFE"]
+      }
+
+    ],
+
+  "drakeJointNames": [
+    "base_x",
+    "base_y",
+    "base_z",
+    "base_roll",
+    "base_pitch",
+    "base_yaw",
+    "LF_HAA",
+    "LF_HFE",
+    "LF_KFE",
+    "RF_HAA",
+    "RF_HFE",
+    "RF_KFE",
+    "LH_HAA",
+    "LH_HFE",
+    "LH_KFE",
+    "RH_HAA",
+    "RH_HFE",
+    "RH_KFE"
+  ],
+  "robotStateJointNames": [
+    "LF_HAA",
+    "LF_HFE",
+    "LF_KFE",
+    "RF_HAA",
+    "RF_HFE",
+    "RF_KFE",
+    "LH_HAA",
+    "LH_HFE",
+    "LH_KFE",
+    "RH_HAA",
+    "RH_HFE",
+    "RH_KFE"
+  ],
+  "fixedPointFile" : "./../anymal/anymal_fp.mat",
+  "leftFootMeshFiles" : ["meshes/foot_Left_7_5_degrees.stl"],
+  "rightFootMeshFiles" : ["meshes/foot_Right_7_5_degrees.stl"],
+  "postureDatabaseFile" : "./../anymal/stored_poses.json",
+  "mirrorJointSignFlips" : ["WaistRotator"],
+
+  "pelvisLink" : "base",
+  "headLink" : "base",
+  "leftFootLink" : "LH_FOOT",
+  "rightFootLink" : "RH_FOOT",
+  "leftHandLink" : "LF_FOOT",
+  "rightHandLink" : "RF_FOOT",
+  "kneeJoints" : ["LeftKneePitch", "RightKneePitch"],
+  "kneeJointLimits" : [0.6,1.9],
+  "baseZJointLimits" : [0.955, 1.14],
+
+  "quadruped" : "True",
+
+  "depthCameras" : ["REALSENSE_FORWARD_CAMERA", "REALSENSE_CAMERA"],
+  "depthCamerasShortName" : ["head camera", "ground camera"],
+
+  "monoCameras" : ["REALSENSE_FORWARD_CAMERA_LEFT", "REALSENSE_CAMERA_LEFT"],
+  "monoCamerasShortName" : ["head camera", "ground camera"],
+
+  "cameraMode" : "simulation",
+
+  "drivingThrottleJoint" : "LeftAnklePitch",
+  "drivingSteeringJoint" : "LeftWristPitch",
+
+  "handCombinations": [],
+
+  "userConfig" : [],
+  "disableComponents" : ["useHumanoidDRCDemos","useConvexHullModel", "useAtlasDriver", "useControllerRate", "useCOPMonitor", "useHands", "useLCMGL","useCOMMonitor","usePlanning","useForceDisplay","useIk","useNavigationPanel","useCollections"]
+}
