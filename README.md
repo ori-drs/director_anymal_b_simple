@@ -12,7 +12,7 @@ Director is a flexible, configurable robot user interface which is configured us
 
 # Cloning and Building
 
-Please refer to the main Director instructions about dependencies and features.
+Please refer to the main Director instructions about dependencies and features. This software targets Ubuntu 18.04 and ROS Melodic.
 
 To clone this module and its dependencies into a ROS workspace:
 
@@ -33,7 +33,7 @@ To build the software:
 	catkin build
 	source devel/setup.bash
 
-This should take about 90 seconds.
+This should take about 90 seconds to compile.
 
 # Running UI with ANYmal simulator
 
@@ -46,6 +46,8 @@ The usual ANYbotics ANYmal simulator will start. The robot will also be drawn in
 
 In this basic version, you can only 'square up', lie down and stand up.
 The python code for these actions is located in anymaldriverpanel.py
+
+Start there for further development.
 
 # Further Development
 
