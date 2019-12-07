@@ -41,7 +41,7 @@ This should take about 90 seconds to compile.
 
 Currently this environment variable is also needed:
 
-	export DRC_BASE="/src/anymal_director_ws/src/director_anymal_b_simple/"
+	export DRC_BASE=$PWD/src/director_anymal_b_simple
 
 # Running UI with ANYmal simulator
 
