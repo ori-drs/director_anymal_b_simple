@@ -4,11 +4,11 @@
 
 # Introduction
 
-This package contains a minimal user interface for operating the ANYmal robot. It configures the core [Director UI](https://github.com/ori-drs/director) to be specific to ANYmal e.g. giving commands and receiving signals from the robot.
+This package contains a minimal user interface for operating the ANYmal robot. It builds upon and configures the core [Director UI](https://github.com/ori-drs/director) to be specific to ANYmal e.g. giving commands to the robot and drawing sensor signals from the robot.
 
 ![director](director_overview.png)
 
-Director is a flexible, configurable robot interface configured using Python, without needing to recompile which enables rapid integration.
+Director is a flexible, configurable robot user interface which is configured using Python. Development can be done without needing to recompile, which enables rapid integration.
 
 # Cloning and Building
 
@@ -47,13 +47,15 @@ The usual ANYbotics ANYmal simulator will start. The robot will also be drawn in
 In this basic version, you can only 'square up', lie down and stand up.
 The python code for these actions is located in anymaldriverpanel.py
 
-A more complete interface is available on request from Oxford Dynamic Robot Systems Group. It includes all the components which are disabled
-in this version and works in simulation and the real robot. In addition to the core director features, features specific to ANYmal include:
+# Further Development
 
-* Point-to-point pose control while trotting
-* interactive Python interface to ANYmal API
-* A task execution interface
+A more complete interface is available on request from Oxford Dynamic Robot Systems Group. It includes all the components which are disabled
+in the version provided here and works in simulation and on the real robot. In addition to the core Director features, features specific to ANYmal Director include:
+
+* An intuitive teleop interface with point-to-point pose control while trotting or walking
+* An Interactive Python interface to ANYmal API
+* Task execution and scheduling for autonomous missions
 
 To make the full use of this software requires joining the [ANYmal Research Community](https://www.anymal-research.org/).
 
-ANYbotics provide excellent controls software, versioning and support with ANYmal within the ANYmal Research Community.
+ANYbotics provide excellent controls software, software release and support for ANYmal within the ANYmal Research Community.
