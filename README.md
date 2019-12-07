@@ -50,22 +50,22 @@ Launch a Gazebo simulator and the Director:
     roslaunch anymal_b_navigation_sim sim.launch
     roslaunch director_anymal_b_simple anymal_sim.launch
 
-The usual ANYbotics ANYmal simulator will start. The robot will also be drawn in Director, as well as LIDAR and depth camera sensor data.
+The usual ANYbotics ANYmal simulator will start. The robot will also be drawn in Director, as well as LIDAR and depth camera sensor data. See the video mentioned above.
 
-In this basic version, you can only 'square up', lie down and stand up.
-The python code for these actions is located in anymaldriverpanel.py
+In this basic version, you can only command the robot to 'square up', lie down and stand up.
+There are quick key bindings to change view e.g. 'r' reset. 't' topview.
 
-Start there for further development.
+The python code for these actions is located in anymaldriverpanel.py. Start there for further development.
 
 # Further Development
 
-A more complete interface is available on request from Oxford Dynamic Robot Systems Group. It includes all the components which are disabled
-in the version provided here and works in simulation and on the real robot. In addition to the core Director features, features specific to ANYmal Director include:
+A more complete interface is available on request from Oxford Dynamic Robot Systems Group. It includes all the UI components which are disabled
+in the version provided here and works in simulation and on the real robot. In addition to the core Director features, features specific to ANYmal Director including:
 
 * An intuitive teleop interface with point-to-point pose control while trotting or walking
-* An Interactive Python interface to ANYmal API
+* An interactive Python interface to the ANYmal API
 * Task execution and scheduling for autonomous missions
 
 To make the full use of this software requires joining the [ANYmal Research Community](https://www.anymal-research.org/).
 
-ANYbotics provide excellent controls software, software release and support for ANYmal within the ANYmal Research Community.
+ANYbotics provide excellent control software, software releases and support for ANYmal within the ANYmal Research Community.
