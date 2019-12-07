@@ -6,9 +6,13 @@
 
 This package contains a minimal user interface for operating the ANYmal robot. It builds upon and configures the core [Director UI](https://github.com/ori-drs/director) to be specific to ANYmal e.g. giving commands to the robot and drawing sensor signals from the robot.
 
-![director](director_overview.png)
+View demo video with ANYmal simulator:
 
-Director is a flexible, configurable robot user interface which is configured using Python. Development can be done without needing to recompile, which enables rapid integration.
+[![Demo video](https://img.youtube.com/vi/ZX53VhNcAuA/0.jpg)](https://www.youtube.com/watch?v=ZX53VhNcAuA)
+
+Director is a flexible, configurable robot user interface which is configured using Python. Development can be done without needing to recompile, which enables rapid integration. It is organised as follows:
+
+![director](director_overview.png)
 
 # Cloning and Building
 
