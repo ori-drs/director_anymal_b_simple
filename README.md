@@ -60,7 +60,7 @@ The python code for these actions is located in anymaldriverpanel.py. Start ther
 # Further Development
 
 A more complete interface is available on request from Oxford Dynamic Robot Systems Group. It includes all the UI components which are disabled
-in the version provided here and works in simulation and on the real robot. In addition to the core Director features, features specific to ANYmal Director including:
+in the version provided here and works in simulation and on the real robot. In addition to the core Director capabilites (see its readme), features specific to ANYmal Director include:
 
 * An intuitive teleop interface with point-to-point pose control while trotting or walking
 * An interactive Python interface to the ANYmal API
